@@ -6,6 +6,7 @@ export const testCostomer: CustomerType = {
 	organisasjonsform: "",
 	beskrivelse: "",
 	ansatte: 0,
+	ansatte_registrert: false,
 	hjemmeside: "https://str.str",
 	epost: "str@str.str",
 	telefonnummer: 0,

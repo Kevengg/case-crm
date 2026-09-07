@@ -7,6 +7,7 @@ export type CustomerType = {
 	organisasjonsform: string;
 	beskrivelse: string;
 	ansatte: number;
+	ansatte_registrert: boolean;
 	hjemmeside: `${(("http" | "https") & "://") | "www." | ""}${string}.${string}`;
 	epost: `${string}@${string}.${string}`;
 	telefonnummer: number;
