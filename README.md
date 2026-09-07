@@ -9,7 +9,9 @@
 Får å starte appen opne konsollen i prosjektets grunnmappe og kjør:
 
 ```
+
 npm start
+
 ```
 
 Hvis en har prosjekt opent i VisualStudio Code kan man også trykke <kbd>F5</kbd>
@@ -88,3 +90,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+```
+
+```
