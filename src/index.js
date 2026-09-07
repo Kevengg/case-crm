@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './defaults/index.css';
 import DefaultApp from './defaults/App.tsx';
 import reportWebVitals from './reportWebVitals';
+import App from './App.tsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 if (process.env.DEFAULT === "true") {
   root.render(
     <React.StrictMode>
-      <DefaultApp />
+      <App />
     </React.StrictMode>
   );
 } else {
