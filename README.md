@@ -2,22 +2,21 @@
 
 > Case i forbinnelse med "Digitale Talenter" kurs
 
-
 ## Starte app(nettside)
 
-> Dette prosjektet er en react app som kjører i Node.js og trenger derfor Node til å kjøre. 
+> Dette prosjektet er en react app som kjører i Node.js og trenger derfor Node til å kjøre.
 
 Får å starte appen opne konsollen i prosjektets grunnmappe og kjør:
+
 ```
 npm start
-```  
+```
+
 Hvis en har prosjekt opent i VisualStudio Code kan man også trykke <kbd>F5</kbd>
 </br>
 Appen vil da starte på [http://localhost:3000/](http://localhost:3000/)
 </br>
 Dette kan endres i .env fila ved å endre på verdien til "PORT"
-
-
 
 # Getting Started with Create React App
 
