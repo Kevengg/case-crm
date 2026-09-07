@@ -9,5 +9,7 @@
     },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "git.alwaysSignOff": true,
+    "git.enableCommitSigning": true
 }
