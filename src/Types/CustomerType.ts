@@ -1,4 +1,4 @@
-import { Institusjonell_sektorkode } from "./Institusjonell_sektorkode";
+import { Institusjonell_sektorkode } from "./Institusjonell_sektorkode.ts";
 /**
  * beskriver en organisasjon referert til som en "kunde"
  */

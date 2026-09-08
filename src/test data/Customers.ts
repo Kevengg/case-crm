@@ -1,5 +1,5 @@
-import { CustomerType } from "../Types/CustomerType";
-import { Institusjonell_sektorkode } from "../Types/Institusjonell_sektorkode";
+import { CustomerType } from "../Types/CustomerType.ts";
+import { Institusjonell_sektorkode } from "../Types/Institusjonell_sektorkode.ts";
 
 export const testCostomer: CustomerType = {
 	navn: "undefined",
