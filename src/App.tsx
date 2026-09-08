@@ -1,9 +1,11 @@
-// Entrance for custom part of react app
-
 import { FC } from "react";
+import CustomerNameCard from "./Components/CustomerNameCard";
+import { testCostomer } from "./test data/Customers.ts";
 
 const App: FC = () => {
-	return <div>Add custom react here</div>;
+	return <div>
+		<CustomerNameCard {...testCostomer}></CustomerNameCard>
+	</div>;
 };
 
 export default App;
