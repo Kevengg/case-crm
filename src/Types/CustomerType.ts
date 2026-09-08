@@ -1,0 +1,82 @@
+import { Institusjonell_sektorkode } from "./Institusjonell_sektorkode.ts";
+/**
+ * beskriver en organisasjon referert til som en "kunde"
+ */
+export type CustomerType = {
+	navn: string;
+	organisasjonsform: string;
+	beskrivelse: string;
+	ansatte: number;
+	ansatte_registrert: boolean;
+	hjemmeside: `${(("http" | "https") & "://") | "www." | ""}${string}.${string}`;
+	epost: `${string}@${string}.${string}`;
+	telefonnummer: number;
+	mobil: number;
+	postadresse?: adresse;
+	forretningsadresse?: adresse;
+	institusjonell_sektorkode: Institusjonell_sektorkode;
+	årsregnskap: number;
+	årsregnskap_dato: Date;
+	stiftelsesdato: Date;
+	mva_reg_frivillig?: string;
+	mva_reg_frivillig_dato?: Date;
+	mva_reg: boolean;
+	mva_reg_dato?: Date;
+	mva_reg_dato_enhet_reg?: Date;
+	frivllig_reg: boolean;
+	frivllig_reg_dato?: Date;
+	foretak_reg: boolean;
+	foretak_reg_dato?: Date;
+	stiftelse_reg: boolean;
+	parti_reg: boolean;
+	parti_reg_dato?: Date;
+	konkurs: boolean;
+	konkurs_dato?: Date;
+	avvikkling: boolean;
+	avvikkling_dato?: Date;
+	avvikkling_tvang: boolean;
+	avvikkling_tvang_dato?: Date;
+	oppløst_leder?: Date;
+	oppløst_revisor?: Date;
+	oppløst_årsregnskap?: Date;
+	oppløst_styre?: Date;
+	oppløst_sletting?: Date;
+	overordnet_offentlig?: number;
+	målform: "bokmål" | "nymål";
+	vedtekt_dato?: Date;
+	vedtekt_formål: string;
+	aktivitet: string;
+	register_hjemland: number;
+	påtegninger: boolean;
+	insolvens_utland: boolean;
+	rekonstruksjonsforhandling_dato?: Date;
+	fravalg_revisjon_dato?: Date;
+	fravalg_revisjon_besluttning_dato?: Date;
+	konsern: boolean;
+	kapitaltype?: string;
+	kapital_beløp?: bigint;
+	aksjer: bigint;
+	kapital_bundet?: bigint;
+	kapital_valuta?: string;
+	kapital_inbetalt?: bigint;
+	kapital_fult_inbetalt?: boolean;
+	kapital_innført_dato?: Date;
+	utland_reg_navn?: string;
+	utland_reg_adresse?: adresse;
+	lov_hjemland_kode?: string;
+	foretaksform_hjemland?: {
+		kode: string;
+		beskrivelse: string;
+		beskrivelse_bokmål: string;
+	};
+};
+
+export type adresse = {
+	adresse: string;
+	postNummer: number;
+	poststed: string;
+	kommune: string;
+	komunenummer: number;
+	land: string;
+	landkode: string;
+};
