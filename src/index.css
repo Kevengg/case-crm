@@ -1,0 +1,17 @@
+html {
+	--fill-available: -webkit-fill-available;
+	height: 100vh;
+	width: var(--fill-available, 100%);
+	overflow: hidden;
+	max-width: 1920px;
+	max-height: 1080px;
+	margin: 0 auto;
+	body {
+		height: var(--fill-available, 100%);
+		width: var(--fill-available, 100%);
+		> div {
+			height: var(--fill-available, 100%);
+			width: var(--fill-available, 100%);
+		}
+	}
+}
