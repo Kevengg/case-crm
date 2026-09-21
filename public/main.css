@@ -1,0 +1,27 @@
+html {
+	/* variables */
+	--border: 1px solid gray;
+	--border-radius: 8px;
+	--fill-available: -webkit-fill-available;
+
+	padding: 0;
+	margin: 0;
+	height: var(--fill-available, 100%);
+	width: var(--fill-available, 100%);
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	max-width: 1920px;
+	max-height: 100vh;
+	margin: 0 auto;
+	body {
+		margin: 0;
+		padding: 8px;
+		height: var(--fill-available, 100%);
+		width: var(--fill-available, 100%);
+		> #root {
+			height: var(--fill-available, 100%);
+			width: var(--fill-available, 100%);
+		}
+	}
+}

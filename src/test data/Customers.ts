@@ -2,7 +2,7 @@ import { CustomerType } from "../Types/CustomerType.ts";
 import { Institusjonell_sektorkode } from "../Types/Institusjonell_sektorkode.ts";
 
 export const testCostomer: CustomerType = {
-	navn: "undefined",
+	navn: "firmanavn",
 	organisasjonsform: "",
 	beskrivelse: "",
 	ansatte: 0,
@@ -32,6 +32,14 @@ export const testCostomer: CustomerType = {
 	insolvens_utland: false,
 	konsern: false,
 	aksjer: 0n,
+	kontakter: [
+		{
+			navn: "navn",
+			primary: true,
+			tlf: "+47 12345678",
+			epost: "str@str.str",
+		},
+	],
 };
 
 const Customers: CustomerType[] = [

@@ -1,3 +1,4 @@
+import Epost from "./Epost.ts";
 import { Institusjonell_sektorkode } from "./Institusjonell_sektorkode.ts";
 /**
  * beskriver en organisasjon referert til som en "kunde"
@@ -9,7 +10,7 @@ export type CustomerType = {
 	ansatte: number;
 	ansatte_registrert: boolean;
 	hjemmeside: `${(("http" | "https") & "://") | "www." | ""}${string}.${string}`;
-	epost: `${string}@${string}.${string}`;
+	epost: Epost;
 	telefonnummer: number;
 	mobil: number;
 	postadresse?: adresse;
@@ -69,6 +70,15 @@ export type CustomerType = {
 		beskrivelse: string;
 		beskrivelse_bokmål: string;
 	};
+
+	kontakter: Kontakt[];
+};
+
+export type Kontakt = {
+	navn: string;
+	primary: boolean;
+	tlf: `+${"" | number}${"" | number}${"" | number} ${number}`;
+	epost: Epost;
 };
 
 export type adresse = {
@@ -80,3 +90,10 @@ export type adresse = {
 	land: string;
 	landkode: string;
 };
+
+export function findPrimaryContact(customer: CustomerType): Kontakt {
+	return (
+		customer.kontakter.find((Kontakt) => Kontakt.primary) ||
+		customer.kontakter[0]
+	);
+}
