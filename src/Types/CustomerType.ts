@@ -72,7 +72,7 @@ export type CustomerType = {
 	};
 
 	kontakter: Kontakt[];
-	sider: { [key: string]: {} };
+	sider: { [key: string]: {}[] };
 };
 
 export type Kontakt = {
