@@ -40,7 +40,48 @@ export const testCostomer: CustomerType = {
 			epost: "str@str.str",
 		},
 	],
-	sider: {},
+	sider: {
+		"testSide": [
+			{
+				"filnavn": "navn",
+				"fil plasering": "http://youtube.com",
+				"notater": "",
+				"Sist endret": new Date(),
+			},
+			{
+				"filnavn": "navn",
+				"fil plasering": "http://youtube.com",
+				"notater": "",
+				"Sist endret": new Date(),
+			},
+			{
+				"filnavn": "navn",
+				"fil plasering": "http://youtube.com",
+				"notater": "",
+				"Sist endret": new Date(),
+			},
+		],
+		"en annen test side": [
+			{
+				"filnavn": "navn",
+				"fil plasering": "http://youtube.com",
+				"notater": "",
+				"Sist endret": new Date(),
+			},
+			{
+				"filnavn": "navn",
+				"fil plasering": "http://youtube.com",
+				"notater": "",
+				"Sist endret": new Date(),
+			},
+			{
+				"filnavn": "navn",
+				"fil plasering": "http://youtube.com",
+				"notater": "",
+				"Sist endret": new Date(),
+			},
+		],
+	},
 };
 
 const Customers: CustomerType[] = [

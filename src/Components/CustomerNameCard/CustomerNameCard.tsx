@@ -2,6 +2,7 @@ import { FC } from "react";
 //@ts-ignore
 import style from "./CustomerNameCard.module.css";
 import { CustomerType, findPrimaryContact } from "../../Types/CustomerType.ts";
+import { capitalize } from "../../Types/StringHelpers.ts";
 
 const CustomerNameCard: FC<CustomerType> = (customer) => {
 	var primaryContact = findPrimaryContact(customer);
@@ -39,34 +40,20 @@ const CustomerNameCard: FC<CustomerType> = (customer) => {
 				</ul>
 			</div>
 			<div className={style.items}>
-				<Subject key={""} values={{}} />
+				{[Object.keys(customer.sider)[0]].map((name) => (
+					<Subject
+						key={name}
+						name={name}
+						values={customer.sider[name]}
+					/>
+				))}
 			</div>
 		</main>
 	);
 };
 
-const Subject: FC<{ key: string; values: {} }> = () => {
-	var items: { name: string; notes: string; changed: Date; file: string }[] =
-		[
-			{
-				name: "her er navn",
-				notes: "notater",
-				changed: new Date(),
-				file: "https://youtube.com",
-			},
-			{
-				name: "her er navn",
-				notes: "notater",
-				changed: new Date(),
-				file: "https://youtube.com",
-			},
-			{
-				name: "her er navn",
-				notes: "notater",
-				changed: new Date(),
-				file: "https://youtube.com",
-			},
-		];
+const Subject: FC<{ name: string; values: {}[] }> = ({ name, values }) => {
+	// TODO: Needs documentation badly
 	return (
 		<div>
 			<table>
@@ -79,31 +66,58 @@ const Subject: FC<{ key: string; values: {} }> = () => {
 								id="selectAll"
 							/>
 						</th>
-						<th>Fil navn</th>
-						<th>Notater</th>
-						<th>Sist endret</th>
+						{values &&
+							Object.keys(values[0]).map((value) => {
+								return <th key={value}>{capitalize(value)}</th>;
+							})}
 					</tr>
 				</thead>
 				<tbody>
-					{items &&
-						items.map((item) => {
+					{values &&
+						values.map((item, idx) => {
+							const keys = Object.keys(item);
 							return (
-								<tr key={`${item.name}`}>
+								<tr key={idx}>
 									<td>
 										<input
 											type="checkbox"
-											name={`select${item.name}`}
+											name={`select${idx}`}
 										/>
 									</td>
-									<td>
-										<a href={item.file}>{item.name}</a>
-									</td>
-									<td>{item.notes}</td>
-									<td>
-										{item.changed.getDate()}.
-										{item.changed.getMonth()}-
-										{item.changed.getUTCFullYear()}
-									</td>
+									{keys.map((key) => {
+										//@ts-ignore
+										var val = item[key];
+										if (typeof val == "object") {
+											// check if date (assumes object is date)
+											return (
+												<td>
+													{(
+														val as Date
+													).toDateString()}
+												</td>
+											);
+										} else if (
+											// check url
+											// Source - https://stackoverflow.com/a/3809435
+											RegExp(
+												/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/,
+											).test(val as string)
+										) {
+											return (
+												<td key={key}>
+													<a
+														href={val}
+														target="_blank"
+														rel="noopener noreferrer">
+														{val}
+													</a>
+												</td>
+											);
+										} else {
+											// default text
+											return <td key={key}>{val}</td>;
+										}
+									})}
 								</tr>
 							);
 						})}
