@@ -16,9 +16,53 @@
 		}
 	}
 	.items {
-		background-color: aqua;
-		min-width: 100%;
+		--border: 1px solid #808080;
+		border: var(--border);
+		min-width: var(--fill-available, 100%);
 		min-height: 100px;
 		height: var(--fill-available, 100%);
+		padding: 30px 15px;
+		border-radius: var(--border-radius);
+		background-color: #ffefd2;
+		> div {
+			border: var(--border);
+			height: var(--fill-available, 100%);
+			background-color: #efefef;
+
+			> table {
+				border: var(--border);
+				padding: 10px 30px;
+				overflow: hidden;
+				width: 100%;
+				gap: 0;
+
+				border-collapse: collapse;
+				tr {
+					border: var(--border);
+					> * {
+						border: var(--border);
+					}
+					> :nth-child(1) {
+						width: 20px;
+						aspect-ratio: 1/1;
+						padding: 3px;
+					}
+					> :not(:nth-child(1)) {
+						padding-left: 10px;
+					}
+				}
+				tbody {
+					> :nth-child(even) {
+						background-color: #e4e4e4;
+					}
+				}
+				thead {
+					background-color: #d3d3d3;
+					th {
+						text-align: start;
+					}
+				}
+			}
+		}
 	}
 }
