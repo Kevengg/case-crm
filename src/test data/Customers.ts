@@ -40,6 +40,7 @@ export const testCostomer: CustomerType = {
 			epost: "str@str.str",
 		},
 	],
+	sider: {},
 };
 
 const Customers: CustomerType[] = [

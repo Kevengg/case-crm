@@ -1,4 +1,5 @@
 import { FC } from "react";
+//@ts-ignore
 import style from "./CustomerNameCard.module.css";
 import { CustomerType, findPrimaryContact } from "../../Types/CustomerType.ts";
 
@@ -38,13 +39,13 @@ const CustomerNameCard: FC<CustomerType> = (customer) => {
 				</ul>
 			</div>
 			<div className={style.items}>
-				<Subject />
+				<Subject key={""} values={{}} />
 			</div>
 		</main>
 	);
 };
 
-const Subject = () => {
+const Subject: FC<{ key: string; values: {} }> = () => {
 	var items: { name: string; notes: string; changed: Date; file: string }[] =
 		[
 			{
